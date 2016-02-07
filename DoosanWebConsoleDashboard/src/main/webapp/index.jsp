@@ -26,12 +26,6 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -42,18 +36,6 @@
       *********************************************************************************************************************************************************** -->
       <!--header start-->
        <c:import url="/PageLink.do?link=inc/inc_header" /> 
-       <!-- <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <a href="index.html" class="logo"><b>두산베어스 관리콘솔</b></a>
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">로그인</a></li>
-                    <li><a class="logout" href="login.html">회원 가입</a></li>
-            	</ul>
-            </div>
-        </header> -->
       <!--header end-->
       
       <!-- **********************************************************************************************************************************************************
@@ -62,77 +44,6 @@
       <!--sidebar start-->
       <aside>
           <c:import url="/PageLink.do?link=inc/inc_leftmenu" />
-           <!-- <div id="sidebar"  class="nav-collapse ">
-              sidebar menu start
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/doosan_logo.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">비회원입니다.<br>로그인을 해주세요.</h5>
-              	  	
-                  <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Home</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>선수단</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="general.html">코칭스탭</a></li>
-                          <li><a  href="buttons.html">투수</a></li>
-                          <li><a  href="panels.html">포수</a></li>
-                          <li><a  href="#">내야수</a></li>
-                          <li><a  href="#">외야수</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="index.jsp">
-                          <i class="fa fa-dashboard"></i>
-                          <span>경기일정</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>순위&nbsp;&amp;&nbsp;기록</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="lock_screen.html">팀 순위</a></li>
-                          <li><a  href="blank.html">TOP5</a></li>
-                          <li><a  href="login.html">기록실</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="index.jsp">
-                          <i class="fa fa-dashboard"></i>
-                          <span>슈뢰딩거의 고양이</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="index.jsp">
-                          <i class="fa fa-dashboard"></i>
-                          <span>슈뢰딩거의 고양이 순위</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>두산베어스 커뮤니티 링크</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="morris.html">디시인사이드 두산베어스 갤러리</a></li>
-                          <li><a  href="chartjs.html">네이버 공식까페</a></li>
-                          <li><a  href="chartjs.html">곰들의 대화</a></li>
-                      </ul>
-                  </li>
-
-              </ul>
-          </div> -->
       </aside>
       <!--sidebar end-->
       
@@ -187,35 +98,6 @@
                   
                       
                       <div class="row mt">
-                      <!-- SERVER STATUS PANELS -->
-                      	<!-- <div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn donut-chart">
-                      			<div class="white-header">
-						  			<h5>SERVER LOAD</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-database"></i> 70%</p>
-									</div>
-	                      		</div>
-								<canvas id="serverstatus01" height="120" width="120"></canvas>
-								<script>
-									var doughnutData = [
-											{
-												value: 70,
-												color:"#68dff0"
-											},
-											{
-												value : 30,
-												color : "#fdfdfd"
-											}
-										];
-										var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-								</script>
-	                      	</div><! --/grey-panel -->
-                      	<!-- </div>/col-md-4 -->  
-                      	
-
                       	<div class="col-md-4 col-sm-4 mb">
                       		<div class="white-panel pn">
                       			<div class="white-header">
@@ -284,31 +166,31 @@
                               <li><span>0</span></li>
                           </ul>
                           <div class="bar">
-                              <div class="title">JAN</div>
+                              <div class="title">1월</div>
                               <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%</div>
                           </div>
                           <div class="bar ">
-                              <div class="title">FEB</div>
+                              <div class="title">2월</div>
                               <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%</div>
                           </div>
                           <div class="bar ">
-                              <div class="title">MAR</div>
+                              <div class="title">3월</div>
                               <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%</div>
                           </div>
                           <div class="bar ">
-                              <div class="title">APR</div>
+                              <div class="title">4월</div>
                               <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%</div>
                           </div>
                           <div class="bar">
-                              <div class="title">MAY</div>
+                              <div class="title">5월</div>
                               <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%</div>
                           </div>
                           <div class="bar ">
-                              <div class="title">JUN</div>
+                              <div class="title">6월</div>
                               <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%</div>
                           </div>
                           <div class="bar">
-                              <div class="title">JUL</div>
+                              <div class="title">7월</div>
                               <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%</div>
                           </div>
                       </div>
@@ -317,21 +199,19 @@
 					
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
                   
-                  
       <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
-                  
-                  <div class="col-lg-3 ds">
-                  	<%-- <c:import url="/PageLink.do?link=inc/inc_rightmenu" /> --%>
-                    <!--COMPLETED ACTIONS DONUTS CHART-->
+                    <%-- <c:import url="/PageLink.do?link=inc/inc_rightmenu" /> --%>
+                    <div class="col-lg-3 ds">
+                    COMPLETED ACTIONS DONUTS CHART
 						 <h3>공지사항</h3>
                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
                       	<div class="details2">
-                      		<p><muted>2 Minutes Ago</muted><br/>
+                      		<p><muted>2분 전</muted><br/>
                       		   <a href="#">James Brown</a> subscribed to your newsletter.<br/>
                       		</p>
                       	</div>
@@ -341,7 +221,7 @@
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
                       	<div class="details2">
-                      		<p><muted>3 Hours Ago</muted><br/>
+                      		<p><muted>3시간 전</muted><br/>
                       		   <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
                       		</p>
                       	</div>
@@ -351,7 +231,7 @@
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
                       	<div class="details2">
-                      		<p><muted>7 Hours Ago</muted><br/>
+                      		<p><muted>7시간 전</muted><br/>
                       		   <a href="#">Brandon Page</a> purchased a year subscription.<br/>
                       		</p>
                       	</div>
@@ -361,7 +241,7 @@
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
                       	<div class="details2">
-                      		<p><muted>11 Hours Ago</muted><br/>
+                      		<p><muted>11시간 전</muted><br/>
                       		   <a href="#">Mark Twain</a> commented your post.<br/>
                       		</p>
                       	</div>
@@ -471,8 +351,8 @@
                       		   <muted>우익수</muted>
                       		</p>
                       	</div>
-                      </div>
-                        <div id="calendar" class="mb">
+                      </div> 
+                         <div id="calendar" class="mb">
                             <div class="panel green-panel no-margin">
                                 <div class="panel-body">
                                     <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
@@ -483,10 +363,10 @@
                                     <div id="my-calendar"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                       
-                  </div><!-- /col-lg-3 -->
-              </div><!--/row -->
+                  </div>
+                  </div><!--/row -->
           </section>
       </section>
 

@@ -31,11 +31,11 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>두산베어스 관리콘솔</b></a>
+            <a href="index.html" class="logo"><b>슈뢰딩거의 고양이</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">로그인</a></li>
-                    <li><a class="logout" href="login.html">회원 가입</a></li>
+                    <li><a class="logout" href="/controller/PageLink.do?link=member/MemberJoin">회원 가입</a></li>
             	</ul>
             </div>
         </header>

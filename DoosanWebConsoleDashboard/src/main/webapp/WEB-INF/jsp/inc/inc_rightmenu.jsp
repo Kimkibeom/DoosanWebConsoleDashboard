@@ -26,6 +26,7 @@
     <script src="assets/js/chart-master/Chart.js"></script>
 	</head>
 	<body>
+	<div class="col-lg-3 ds">
 		<h3>공지사항</h3>
                       <!-- First Action -->
                       <div class="desc">
@@ -187,7 +188,7 @@
                       </div>
 
                         <!-- CALENDAR-->
-                        <div id="calendar" class="mb">
+                         <div id="calendar" class="mb">
                             <div class="panel green-panel no-margin">
                                 <div class="panel-body">
                                     <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
@@ -198,7 +199,8 @@
                                     <div id="my-calendar"></div>
                                 </div>
                             </div>
-                        </div><!-- / calendar -->
+                        </div>
+	</div>
 	
 		<script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
