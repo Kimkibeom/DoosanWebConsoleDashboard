@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,7 +36,7 @@
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">로그인</a></li>
-                    <li><a class="logout" href="/controller/PageLink.do?link=member/MemberJoin">회원 가입</a></li>
+                    <li><a class="logout" href="<c:url value='/PageLink.do?link=member/MemberJoin'/>">회원 가입</a></li>
             	</ul>
             </div>
         </header>
