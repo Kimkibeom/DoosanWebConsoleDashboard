@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="euc-kr">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
@@ -39,159 +41,19 @@
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-      <header class="header black-bg">
+       <c:import url="/PageLink.do?link=inc/inc_header" /> 
+       <!-- <header class="header black-bg">
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
-            <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
-            <!--logo end-->
-            <div class="nav notify-row" id="top_menu">
-                <!--  notification start -->
-                <ul class="nav top-menu">
-                    <!-- settings start -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-tasks"></i>
-                            <span class="badge bg-theme">4</span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">You have 4 pending tasks</p>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">DashGum Admin Panel</div>
-                                        <div class="percent">40%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">Database Update</div>
-                                        <div class="percent">60%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">Product Development</div>
-                                        <div class="percent">80%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">Payments Sent</div>
-                                        <div class="percent">70%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                            <span class="sr-only">70% Complete (Important)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="external">
-                                <a href="#">See All Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- settings end -->
-                    <!-- inbox dropdown start-->
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-theme">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">You have 5 new messages</p>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Zac Snider</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hi mate, how is everything?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Divya Manian</span>
-                                    <span class="time">40 mins.</span>
-                                    </span>
-                                    <span class="message">
-                                     Hi, I need your help with this.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Dan Rogers</span>
-                                    <span class="time">2 hrs.</span>
-                                    </span>
-                                    <span class="message">
-                                        Love your new Dashboard.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Dj Sherman</span>
-                                    <span class="time">4 hrs.</span>
-                                    </span>
-                                    <span class="message">
-                                        Please, answer asap.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">See all messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox dropdown end -->
-                </ul>
-                <!--  notification end -->
-            </div>
+            <a href="index.html" class="logo"><b>두산베어스 관리콘솔</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.html">로그인</a></li>
+                    <li><a class="logout" href="login.html">회원 가입</a></li>
             	</ul>
             </div>
-        </header>
+        </header> -->
       <!--header end-->
       
       <!-- **********************************************************************************************************************************************************
@@ -199,87 +61,78 @@
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
       <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
+          <c:import url="/PageLink.do?link=inc/inc_leftmenu" />
+           <!-- <div id="sidebar"  class="nav-collapse ">
+              sidebar menu start
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <p class="centered"><a href="profile.html"><img src="assets/img/doosan_logo.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">비회원입니다.<br>로그인을 해주세요.</h5>
               	  	
                   <li class="mt">
                       <a class="active" href="index.html">
                           <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+                          <span>Home</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
-                          <span>한글 테스트</span>
+                          <span>선수단</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="general.html">코칭스탭</a></li>
+                          <li><a  href="buttons.html">투수</a></li>
+                          <li><a  href="panels.html">포수</a></li>
+                          <li><a  href="#">내야수</a></li>
+                          <li><a  href="#">외야수</a></li>
                       </ul>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Components</span>
+                      <a href="index.jsp">
+                          <i class="fa fa-dashboard"></i>
+                          <span>경기일정</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
-                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
+                          <span>순위&nbsp;&amp;&nbsp;기록</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="lock_screen.html">팀 순위</a></li>
+                          <li><a  href="blank.html">TOP5</a></li>
+                          <li><a  href="login.html">기록실</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
+                      <a href="index.jsp">
+                          <i class="fa fa-dashboard"></i>
+                          <span>슈뢰딩거의 고양이</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
+                      <a href="index.jsp">
+                          <i class="fa fa-dashboard"></i>
+                          <span>슈뢰딩거의 고양이 순위</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
-                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
+                          <span>두산베어스 커뮤니티 링크</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
+                          <li><a  href="morris.html">디시인사이드 두산베어스 갤러리</a></li>
+                          <li><a  href="chartjs.html">네이버 공식까페</a></li>
+                          <li><a  href="chartjs.html">곰들의 대화</a></li>
                       </ul>
                   </li>
 
               </ul>
-              <!-- sidebar menu end-->
-          </div>
+          </div> -->
       </aside>
       <!--sidebar end-->
       
@@ -299,35 +152,35 @@
 					  			<span class="li_heart"></span>
 					  			<h3>933</h3>
                   			</div>
-					  			<p>933 People liked your page the last 24hs. Whoohoo!</p>
+					  			<p>933명의 사람들이 좋아요를 눌러주셨습니다</p>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_cloud"></span>
-					  			<h3>+48</h3>
+					  			<h3>48</h3>
                   			</div>
-					  			<p>48 New files were added in your cloud storage.</p>
+					  			<p>48명의 새로운 회원이 가입했습니다</p>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_stack"></span>
-					  			<h3>23</h3>
+					  			<h3>0</h3>
                   			</div>
-					  			<p>You have 23 unread messages in your inbox.</p>
+					  			<p>로그인한 회원만 볼 수 있는 서비스입니다.</p>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_news"></span>
-					  			<h3>+10</h3>
+					  			<h3>3</h3>
                   			</div>
-					  			<p>More than 10 news were added in your reader.</p>
+					  			<p>3개의 새로운 두산베어스 소식이 있습니다.</p>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_data"></span>
 					  			<h3>OK!</h3>
                   			</div>
-					  			<p>Your server is working perfectly. Relax & enjoy.</p>
+					  			<p>현재 서버의 상태가 쾌적합니다</p>
                   		</div>
                   	
                   	</div><!-- /row mt -->	
@@ -335,7 +188,7 @@
                       
                       <div class="row mt">
                       <!-- SERVER STATUS PANELS -->
-                      	<div class="col-md-4 col-sm-4 mb">
+                      	<!-- <div class="col-md-4 col-sm-4 mb">
                       		<div class="white-panel pn donut-chart">
                       			<div class="white-header">
 						  			<h5>SERVER LOAD</h5>
@@ -360,23 +213,23 @@
 										var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
 								</script>
 	                      	</div><! --/grey-panel -->
-                      	</div><!-- /col-md-4-->
+                      	<!-- </div>/col-md-4 -->  
                       	
 
                       	<div class="col-md-4 col-sm-4 mb">
                       		<div class="white-panel pn">
                       			<div class="white-header">
-						  			<h5>TOP PRODUCT</h5>
-                      			</div>
+						  			<h5>3월의 Sale Product</h5>
+								</div>
+								<p><img src="assets/img/doosan_product.jpg"></p>
 								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
+									<div class="col-md-6">
+										<p><i class="fa fa-heart"></i>50% down</p>
 									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<div class="centered">
-										<img src="assets/img/product.png" width="120">
-	                      		</div>
+									<div class="col-md-6">
+										<p>&#8361;&nbsp;140,000</p>
+									</div>
+								</div>
                       		</div>
                       	</div><!-- /col-md-4 -->
                       	
@@ -384,69 +237,20 @@
 							<!-- WHITE PANEL - TOP USER -->
 							<div class="white-panel pn">
 								<div class="white-header">
-									<h5>TOP USER</h5>
+									<h5>3월 31일 MVP</h5>
 								</div>
-								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
-								<p><b>Zac Snider</b></p>
+								<p><img src="assets/img/player/catcher/25_yangyijee.jpg"></p>
+								<p><b>양의지</b></p>
 								<div class="row">
 									<div class="col-md-6">
-										<p class="small mt">MEMBER SINCE</p>
-										<p>2012</p>
+										<p class="small mt">기록</p>
+										<p>4타수 3안타 1홈런</p>
 									</div>
 									<div class="col-md-6">
-										<p class="small mt">TOTAL SPEND</p>
-										<p>$ 47,60</p>
+										<p class="small mt">득표 수</p>
+										<p>1,300,000</p>
 									</div>
 								</div>
-							</div>
-						</div><!-- /col-md-4 -->
-                      	
-
-                    </div><!-- /row -->
-                    
-                    				
-					<div class="row">
-						<!-- TWITTER PANEL -->
-						<div class="col-md-4 mb">
-                      		<div class="darkblue-panel pn">
-                      			<div class="darkblue-header">
-						  			<h5>DROPBOX STATICS</h5>
-                      			</div>
-								<canvas id="serverstatus02" height="120" width="120"></canvas>
-								<script>
-									var doughnutData = [
-											{
-												value: 60,
-												color:"#68dff0"
-											},
-											{
-												value : 40,
-												color : "#444c57"
-											}
-										];
-										var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
-								</script>
-								<p>April 17, 2014</p>
-								<footer>
-									<div class="pull-left">
-										<h5><i class="fa fa-hdd-o"></i> 17 GB</h5>
-									</div>
-									<div class="pull-right">
-										<h5>60% Used</h5>
-									</div>
-								</footer>
-                      		</div><! -- /darkblue panel -->
-						</div><!-- /col-md-4 -->
-						
-						
-						<div class="col-md-4 mb">
-							<!-- INSTAGRAM PANEL -->
-							<div class="instagram-panel pn">
-								<i class="fa fa-instagram fa-4x"></i>
-								<p>@THISISYOU<br/>
-									5 min. ago
-								</p>
-								<p><i class="fa fa-comment"></i> 18 | <i class="fa fa-heart"></i> 49</p>
 							</div>
 						</div><!-- /col-md-4 -->
 						
@@ -454,21 +258,21 @@
 							<!-- REVENUE PANEL -->
 							<div class="darkblue-panel pn">
 								<div class="darkblue-header">
-									<h5>REVENUE</h5>
+									<h5>홈 경기 관중 수 집계 그래프</h5>
 								</div>
 								<div class="chart mt">
 									<div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
 								</div>
-								<p class="mt"><b>$ 17,980</b><br/>Month Income</p>
+								<p class="mt"><b>17,980</b><br/>3월 총 관중 수</p>
 							</div>
 						</div><!-- /col-md-4 -->
-						
-					</div><!-- /row -->
-					
+                      	
+
+                    </div><!-- /row -->
 					<div class="row mt">
                       <!--CUSTOM CHART START -->
                       <div class="border-head">
-                          <h3>VISITS</h3>
+                          <h3>월별 방문자 수</h3>
                       </div>
                       <div class="custom-bar-chart">
                           <ul class="y-axis">
@@ -519,124 +323,155 @@
       *********************************************************************************************************************************************************** -->                  
                   
                   <div class="col-lg-3 ds">
+                  	<%-- <c:import url="/PageLink.do?link=inc/inc_rightmenu" /> --%>
                     <!--COMPLETED ACTIONS DONUTS CHART-->
-						<h3>NOTIFICATIONS</h3>
-                                        
-                      <!-- First Action -->
+						 <h3>공지사항</h3>
                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
-                      	<div class="details">
+                      	<div class="details2">
                       		<p><muted>2 Minutes Ago</muted><br/>
                       		   <a href="#">James Brown</a> subscribed to your newsletter.<br/>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Second Action -->
                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
-                      	<div class="details">
+                      	<div class="details2">
                       		<p><muted>3 Hours Ago</muted><br/>
                       		   <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Third Action -->
                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
-                      	<div class="details">
+                      	<div class="details2">
                       		<p><muted>7 Hours Ago</muted><br/>
                       		   <a href="#">Brandon Page</a> purchased a year subscription.<br/>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Fourth Action -->
                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
-                      	<div class="details">
+                      	<div class="details2">
                       		<p><muted>11 Hours Ago</muted><br/>
                       		   <a href="#">Mark Twain</a> commented your post.<br/>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Fifth Action -->
                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
-                      	<div class="details">
+                      	<div class="details2">
                       		<p><muted>18 Hours Ago</muted><br/>
                       		   <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
                       		</p>
                       	</div>
                       </div>
-
-                       <!-- USERS ONLINE SECTION -->
-						<h3>TEAM MEMBERS</h3>
-                      <!-- First Member -->
+						<h3>4월 1일 스타팅 라인업</h3>
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+                      		<img src="assets/img/player/pitcher/28_jangwonjun.jpg" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">DIVYA MANIAN</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">장원준</a><br/>
+                      		   <muted>선발투수</muted>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Second Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
+                      		<img src="assets/img/player/catcher/25_yangyijee.jpg" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">DJ SHERMAN</a><br/>
-                      		   <muted>I am Busy</muted>
+                      		<p><a href="#">양의지</a><br/>
+                      		   <muted>포수</muted>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Third Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
+                      		<img src="assets/img/player/infielder/36_ohjaeil.jpg" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">DAN ROGERS</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">오재일</a><br/>
+                      		   <muted>1루수</muted>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Fourth Member -->
+                      
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                      		<img src="assets/img/player/infielder/24_ohjaewon.jpg" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">Zac Sniders</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">오재원</a><br/>
+                      		   <muted>2루수</muted>
                       		</p>
                       	</div>
                       </div>
-                      <!-- Fifth Member -->
+                     
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
+                      		<img src="assets/img/player/infielder/13_huhgyungmin.jpg" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">Marcel Newman</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">허경민</a><br/>
+                      		   <muted>3루수</muted>
                       		</p>
                       	</div>
                       </div>
-
-                        <!-- CALENDAR-->
+                      
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img src="assets/img/player/infielder/52_kimjaeho.jpg" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">김재호</a><br/>
+                      		   <muted>유격수</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img src="assets/img/player/outfielder/33_jungjinho.jpg" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">정진호</a><br/>
+                      		   <muted>좌익수</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img src="assets/img/player/outfielder/31_jungsoobin.png" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">정수빈</a><br/>
+                      		   <muted>중견수</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img src="assets/img/player/outfielder/49_minbyunghun.png" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">민병헌</a><br/>
+                      		   <muted>우익수</muted>
+                      		</p>
+                      	</div>
+                      </div>
                         <div id="calendar" class="mb">
                             <div class="panel green-panel no-margin">
                                 <div class="panel-body">
@@ -648,10 +483,10 @@
                                     <div id="my-calendar"></div>
                                 </div>
                             </div>
-                        </div><!-- / calendar -->
+                        </div>
                       
                   </div><!-- /col-lg-3 -->
-              </div><! --/row -->
+              </div><!--/row -->
           </section>
       </section>
 
@@ -660,7 +495,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="index.html#" class="go-top">
+              <a href="index.jsp" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -696,7 +531,7 @@
             // (string | mandatory) the text inside the notification
             text: '고맙다 니 덕분에 방문자 수가 1이 늘었다. 두산베어스 관리콘솔과 대시보드를 관리하는 사이트다. 이 창은 꺼도 상관없다.<br /> 거슬리면 꺼라 ',
             // (string | optional) the image to display on the left
-            image: 'assets/img/ui-sam.jpg',
+            image: 'assets/img/doosan_logo.jpg',
             // (bool | optional) if you want it to fade out on its own or just sit there
             sticky: true,
             // (int | optional) the time you want it to be alive for before fading out
@@ -724,10 +559,10 @@
                 action_nav: function () {
                     return myNavFunction(this.id);
                 },
-                ajax: {
+                /* ajax: {
                     url: "show_data.php?action=1",
                     modal: true
-                },
+                }, */
                 legend: [
                     {type: "text", label: "Special event", badge: "00"},
                     {type: "block", label: "Regular event", }
