@@ -29,4 +29,16 @@
      	]]>
      </insert>
      
+     <select id="selectMemberById" parameterType="string" resultType="com.doosanwebconsole.vo.MemberVO">
+     <![CDATA[
+     	SELECT * FROM TB_MEMBER WHERE MEMBER_ID=#{member_id}
+     ]]>
+     </select>
+     
+     <select id="selectOneMember" parameterType="com.doosanwebconsole.vo.MemberVO" resultType="com.doosanwebconsole.vo.MemberVO">
+     <![CDATA[
+     	SELECT * FROM TB_MEMBER WHERE MEMBER_ID = #{member_id} AND MEMBER_PASSWORD = #{member_password}
+     ]]>
+     </select>
+     
 </mapper>

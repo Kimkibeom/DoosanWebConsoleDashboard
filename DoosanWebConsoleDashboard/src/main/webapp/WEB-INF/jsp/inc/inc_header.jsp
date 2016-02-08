@@ -35,7 +35,14 @@
             <a href="index.html" class="logo"><b>슈뢰딩거의 고양이</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">로그인</a></li>
+            			<c:choose>
+            			<c:when test="${sessionScope.user eq null }">
+                    	<li><a class="logout" href="<c:url value='/PageLink.do?link=member/MemberLogin'/>">로그인</a></li>
+                    	</c:when>
+                    	<c:otherwise>
+                    	<li><a class="logout" href="<c:url value='/Logout.do'/>">로그아웃</a></li>
+                    	</c:otherwise>
+                    	</c:choose>
                     <li><a class="logout" href="<c:url value='/PageLink.do?link=member/MemberJoin'/>">회원 가입</a></li>
             	</ul>
             </div>

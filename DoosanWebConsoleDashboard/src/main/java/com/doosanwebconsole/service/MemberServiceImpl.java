@@ -1,14 +1,13 @@
 package com.doosanwebconsole.service;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 import com.doosanwebconsole.dao.MemberDAO;
 import com.doosanwebconsole.vo.MemberVO;
@@ -20,9 +19,9 @@ public class MemberServiceImpl implements MemberService{
 	private MemberDAO memberDAO;
 
 	@Override
-	public MemberVO selectMember(Map<String, String> paramMap) {
+	public MemberVO selectMember(MemberVO memberVO) {
+		return memberDAO.selectOneMember(memberVO);
 		
-		return null;
 	}
 
 	@Override
@@ -45,6 +44,13 @@ public class MemberServiceImpl implements MemberService{
 		memberVO.setMember_phone(member_phone);
 		
 		memberDAO.insertMember(memberVO);
+	}
+
+	@Override
+	public MemberVO selectMemberById(String id) {
+		MemberVO resultVO = null;
+		resultVO = memberDAO.selectMemberById(id);
+		return resultVO;
 	}
 	
 	

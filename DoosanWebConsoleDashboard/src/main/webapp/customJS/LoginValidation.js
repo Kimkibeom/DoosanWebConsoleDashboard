@@ -1,4 +1,14 @@
-function moveFocus(num, here, next){
+		function addJavascript(jsname) {
+			var th = document.getElementsByTagName('head')[0];
+			var s = document.createElement('script');
+			s.setAttribute('type','text/javascript');
+			s.setAttribute('src',jsname);
+			th.appendChild(s);
+		}
+		
+		addJavascript('assets/js/jquery.js');
+
+		function moveFocus(num, here, next){
     		var str = here.value.length;
     		if(str == num){
     			next.focus();
@@ -18,14 +28,7 @@ function moveFocus(num, here, next){
     		var phone_first = document.getElementById('phone_first');
     		var phone_second = document.getElementById('phone_second');
     		var phone_third = document.getElementById('phone_third');
-    		console.log(document.getElementsByName('member_sex'));
-    		console.log(email.value);
-    		
-    		if(id.value == ""){
-    			alert("아이디를 입력해주세요");
-    			id.focus();
-    			return false;
-    		}
+    		var check_id = document.getElementById('check_id');
     		
     		if(id.value.length < 4 || id.value.length > 12){
     			alert("아이디는 4~12자 이내로 입력 가능합니다");
@@ -75,6 +78,12 @@ function moveFocus(num, here, next){
     		if(!/^[\w]{4,}@[\w]+(\.[\w-]+){1,3}$/.test(email.value)){
     			alert("이메일 형식에 맞지 않습니다");
     			email.select();
+    			return false;
+    		}
+    		
+    		if(!check_id.classList.contains('btn-success')){
+    			alert("ID 중복 확인을 해주세요");
+    			check_id.focus();
     			return false;
     		}
     		

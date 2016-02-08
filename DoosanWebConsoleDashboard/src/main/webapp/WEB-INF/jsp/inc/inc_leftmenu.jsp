@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,8 +32,14 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
               	  <p class="centered"><a href="profile.html"><img src="assets/img/doosan_logo.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">비회원입니다.<br>로그인을 해주세요.</h5>
-              	  	
+              	  <c:choose>
+              	  	<c:when test="${sessionScope.user eq null }">
+              	  		<h5 class="centered">비회원입니다.<br>로그인을 해주세요.</h5>
+              	  	</c:when>
+              	  	<c:otherwise>
+              	  		<h5 class="centered">${sessionScope.user.member_id}님 환영합니다</h5>
+              	  	</c:otherwise>
+              	  </c:choose>	
                   <li class="mt">
                       <a class="active" href="index.html">
                           <i class="fa fa-dashboard"></i>
