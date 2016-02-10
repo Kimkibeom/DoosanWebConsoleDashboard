@@ -184,3 +184,7 @@
     			event.target.value = event.target.value.replace(/[^0-9]/g, "");
     		}
     	}
+    	
+    	function goHome(){
+    		document.location.href="/controller/PageLink.do?link=MainView";
+    	}

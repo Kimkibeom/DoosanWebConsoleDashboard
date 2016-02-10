@@ -1,5 +1,6 @@
 package com.doosanwebconsole.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.HashMap;
@@ -10,11 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.doosanwebconsole.service.MemberService;
 import com.doosanwebconsole.vo.MemberVO;
@@ -51,11 +55,20 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/insertMember.do")
-	public String insertMember(@RequestParam Map<String, String> paramMap, ModelMap model) throws ParseException{
-		
+	public void insertMember(@RequestParam Map<String, String> paramMap, HttpServletResponse response, ModelMap model) throws Exception{
 		memberService.insertMember(paramMap);
-		
-		return "MainView";
+		model.addAttribute("result","success");
+		HashMap<String, String> map = new HashMap<String,String>();
+		map.put("resultMsg", "SUCCESS");
+		Gson gson = new Gson();
+		PrintWriter pw = null;
+		response.setContentType("application/json");
+		response.setContentType("text/xml;charset=utf-8");
+		response.setHeader("Cache-Control", "no-cache");
+		pw = new PrintWriter(response.getWriter());
+		pw.println(gson.toJson(map));
+		pw.flush();
+		pw.close();
 	}
 	
 	@RequestMapping(value="/id_validation.do")

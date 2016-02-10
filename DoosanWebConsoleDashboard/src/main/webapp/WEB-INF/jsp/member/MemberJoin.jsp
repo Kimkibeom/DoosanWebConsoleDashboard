@@ -18,14 +18,13 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-    
     <script src="customJS/LoginValidation.js"></script>
 	</head>
 	<body>
 		<div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" name="Frm" id="Frm" action="<c:url value='/insertMember.do'/>" method="post" onsubmit="return validate();">
+		      <form class="form-login" name="Frm" id="Frm"> <%-- action="<c:url value='/insertMember.do'/>" --%><!-- onsubmit="return validate();" -->
 		        <h2 class="form-login-heading">회원 가입</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" id="member_id" name="member_id" placeholder="아이디를 입력해 주세요" style="width:64%; display:inline-block;" autofocus>
@@ -76,10 +75,27 @@
 					<input type="text" class="form-control" size="4" id="phone_second" name="phone_second" MaxLength="4" onkeydown="return onlyNumber(event);" onKeyUp="moveFocus(4,this,this.form.phone_third);" style="width:70px; display:inline-block; margin-bottom:10px; ime-mode:disabled;" >&nbsp;-&nbsp;
 					<input type="text" class="form-control" size="4" id="phone_third" name="phone_third" MaxLength="4" onkeydown="return onlyNumber(event);" onkeyup="removeChar(event)" style="width:70px; display:inline-block; margin-bottom:10px;">
 					<br>
-					<button class="btn btn-theme btn-block" id="member_join" type="submit">가입하기</button>
+					<button class="btn btn-theme btn-block" id="member_join" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" type="button">가입하기</button>
 		
 		        </div>
-		      </form>	  	
+		      </form>	 
+		      
+		      
+		      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h4 class="modal-title" id="myModalLabel">회원가입 완료</h4>
+						      </div>
+						      <div class="modal-body">
+									슈뢰딩거의 고양이의 회원으로 가입하신 것을 축하드립니다.<br>가입 기념으로 100냥포인트를 드립니다
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="goHome();">홈으로</button>
+						      </div>
+						    </div>
+						  </div>
+			</div> 	
 	  	
 	  	</div>
 	  </div>
@@ -93,6 +109,7 @@
     /**
 	 * 아이디 중복 확인
 	 */
+	 
 	$(function(){
 		$('#check_id').click(function(){
 			var msgCd = $('#member_id').val();
@@ -123,8 +140,50 @@
 			});
 			
 		});
+		
+		$('#member_join').click(function(){
+			var member_id = $('#member_id').val();
+			var member_password = $('#member_password').val();
+			var member_password_check = $('#member_password_check').val();
+			var member_name = $('#member_name').val();
+			var member_sex = $('[name=member_sex]').val();
+			var birth_year = $('#birth_year').val();
+			var birth_month = $('#birth_month').val();
+			var birth_day = $('#birth_day').val();
+			var member_email =  $('#member_email').val();
+			var phone_first = $('#phone_first').val();
+			var phone_second = $('#phone_second').val();
+			var phone_third = $('#phone_third').val();
+			
+			if(!validate()){
+				return false;
+			}
+			
+			$.ajax({
+				type:'POST',
+				data: {
+					member_id:member_id,
+					member_password:member_password,
+					member_name:member_name,
+					member_sex:member_sex,
+					birth_year:birth_year,
+					birth_month:birth_month,
+					birth_day:birth_day,
+					member_email:member_email,
+					phone_first:phone_first,
+					phone_second:phone_second,
+					phone_third:phone_third
+				},
+				url:'<c:url value='/insertMember.do'/>',
+				success:function(returnData, textStatus, xhr){
+					$('#myModal').dialog({
+						autoOpen:false,
+						modal:true,
+					})
+				},
+			});
+		});
 	});
-    
         $.backstretch("assets/img/login-bg.jpg", {speed: 500});
     </script>
 	</body>
