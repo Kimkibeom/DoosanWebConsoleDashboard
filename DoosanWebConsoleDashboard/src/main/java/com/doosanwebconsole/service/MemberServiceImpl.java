@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 
 import com.doosanwebconsole.dao.MemberDAO;
 import com.doosanwebconsole.vo.MemberVO;
@@ -19,9 +19,28 @@ public class MemberServiceImpl implements MemberService{
 	private MemberDAO memberDAO;
 
 	@Override
-	public MemberVO selectMember(MemberVO memberVO) {
-		return memberDAO.selectOneMember(memberVO);
+	public Map<String, Object> selectMember(Map<String, String> paramMap, HttpServletRequest request) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		MemberVO memberVO = new MemberVO();
+		memberVO.setMember_id(paramMap.get("member_id"));
+		memberVO.setMember_password(paramMap.get("member_password"));
+		MemberVO resultVO = memberDAO.selectOneMember(memberVO);
 		
+		if(resultVO == null){
+			returnMap.put("returnMsg", "FAILED");
+		}else{
+			String userIP = request.getRemoteAddr();
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("member_id", resultVO.getMember_id());
+			map.put("password", resultVO.getMember_password());
+			request.getSession().setAttribute("MemberVO", resultVO);
+			request.getSession().setAttribute("user", map);
+			returnMap.put("returnMsg", "SUCCESS");
+			returnMap.put("MemberVO", resultVO);
+			returnMap.put("userIP", userIP);
+		}
+		returnMap.put("link", "MainView");
+		return returnMap;
 	}
 
 	@Override

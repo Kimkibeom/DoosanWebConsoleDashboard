@@ -3,12 +3,12 @@ package com.doosanwebconsole.service;
 import java.text.ParseException;
 import java.util.Map;
 
-import org.springframework.ui.ModelMap;
+import javax.servlet.http.HttpServletRequest;
 
 import com.doosanwebconsole.vo.MemberVO;
 
 public interface MemberService {
-	MemberVO selectMember(MemberVO memberVO);
+	Map<String, Object> selectMember(Map<String, String> paramMap, HttpServletRequest request);
 
 	void insertMember(Map<String, String> paramMap) throws ParseException;
 

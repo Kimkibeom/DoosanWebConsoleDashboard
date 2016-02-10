@@ -174,6 +174,7 @@
 					phone_second:phone_second,
 					phone_third:phone_third
 				},
+				dataType: 'json',
 				url:'<c:url value='/insertMember.do'/>',
 				success:function(returnData, textStatus, xhr){
 					$('#myModal').dialog({

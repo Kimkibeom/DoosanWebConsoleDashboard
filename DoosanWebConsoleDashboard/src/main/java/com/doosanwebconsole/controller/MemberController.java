@@ -32,8 +32,10 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping(value="/securityLogin.do")
-	public String acceptLogin(@ModelAttribute("MemberVO") MemberVO memberVO, ModelMap model, HttpServletRequest request){
-		String userIP = request.getRemoteAddr();
+	public void acceptLogin(@RequestParam Map<String, String> paramMap, ModelMap model, HttpServletResponse response, HttpServletRequest request) throws Exception{
+		Map<String, Object> map = memberService.selectMember(paramMap, request);
+		
+		/*String userIP = request.getRemoteAddr();
 		MemberVO resultVO = new MemberVO();
 		
 		resultVO = memberService.selectMember(memberVO);
@@ -51,7 +53,17 @@ public class MemberController {
 			model.addAttribute("userIP", userIP);
 		}
 		
-		return "MainView";
+		return "MainView";*/
+		
+		Gson gson = new Gson();
+		PrintWriter pw = null;
+		response.setContentType("application/json");
+		response.setContentType("text/xml;charset=utf-8");
+		response.setHeader("Cache-Control", "no-cache");
+		pw = new PrintWriter(response.getWriter());
+		pw.println(gson.toJson(map));
+		pw.flush();
+		pw.close();
 	}
 	
 	@RequestMapping(value="/insertMember.do")
